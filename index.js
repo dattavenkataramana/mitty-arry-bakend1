@@ -19,13 +19,13 @@ const InitailizeDbserverAndDatabase = async () =>{
             filename:dbPath,
             driver:sqlite3.Database,
 
-        })
+        });
         app.listen(3001, ()=>{
             console.log(`server nunning at http://localhost:3001`)
         })
     }catch(err){
        console.log(`DB Error: ${err.message}`)
-       process.exit(1)
+       process.exit(-1)
     }
 }
 
