@@ -1,0 +1,24 @@
+
+
+
+POST http://localhost:3001/register
+Content-Type: application/json
+
+{
+    "username":"datta",
+    "eamil":"datta@gmail.com",
+    "password":"datta1234@#*"
+}
+###
+
+POST  http://localhost:3001/login
+Content-Type: application/json
+
+{
+    "eamil":"datta@gmail.com",
+    "password":"datta1234@#*"
+}
+
+###
+POST  http://localhost:3001/logout
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MTI4MDg2NTd9.xXgL7A378XZhhyh3aMzImC2mEd3bf9mttiqwAHhO4gM

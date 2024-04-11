@@ -1,0 +1,6 @@
+CREATE TABLE user(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    username  VARCHAR(250),
+    email VARCHAR(250),
+    password VARCHAR(250)
+)
