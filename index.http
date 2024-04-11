@@ -6,7 +6,7 @@ Content-Type: application/json
 
 {
     "username":"datta",
-    "eamil":"datta@gmail.com",
+    "email":"datta@gmail.com",
     "password":"datta1234@#*"
 }
 ###
@@ -15,7 +15,7 @@ POST  http://localhost:3001/login
 Content-Type: application/json
 
 {
-    "eamil":"datta@gmail.com",
+    "email":"datta@gmail.com",
     "password":"datta1234@#*"
 }
 
