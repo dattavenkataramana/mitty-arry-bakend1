@@ -5,7 +5,6 @@ const sqlite3 = require('sqlite3')
 const bcrypt = require('bcrypt')
 const cors = require('cors')
 const jwt = require('jsonwebtoken')
- 
 const dbPath = path.join(__dirname,"database.db")
 const app = express();
 app.use(express.json())
@@ -31,11 +30,15 @@ const InitailizeDbserverAndDatabase = async () =>{
 
 InitailizeDbserverAndDatabase()
 
-
+app.get('/data',async(req,res)=>{
+  const dataDetails = `select * from user`
+  const data = await db.all(dataDetails)
+  res.send(data)
+})
 app.post("/register", async (request, response) => {
     const {username,email,password} = request.body;
     const hashedPassword = await bcrypt.hash(password, 10);
-    const selectUserQuery = `SELECT * FROM user WHERE  email = '${email}'`;
+    const selectUserQuery = `SELECT * FROM user WHERE  username = '${username}'`;
     const dbUser = await db.get(selectUserQuery);
     console.log(dbUser)
     if (dbUser === undefined) {
